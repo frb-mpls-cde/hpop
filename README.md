@@ -13,7 +13,7 @@ The current version of the HPOP datasets reflects information (see below) as of 
 
 ---
 # 📰 Related publications
-Read our article, “[New homeownership measure puts people first](minneapolisfed.org/article/2026/new-homeownership-measure-puts-people-first),” which explores how the HPOP more accurately captures the share of adults who own homes compared to the traditional owner-occupancy rate.
+Read our article, “[New homeownership measure puts people first](https://www.minneapolisfed.org/article/2026/new-homeownership-measure-puts-people-first),” which explores how the HPOP more accurately captures the share of adults who own homes compared to the traditional owner-occupancy rate.
 
 ---
 # 🌍 Scope 
