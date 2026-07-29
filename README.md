@@ -5,11 +5,11 @@
 # 🎯 Purpose
 The [HPOP datasets](https://github.com/frb-mpls-cde/hpop) are a public data product from the [Community Development and Engagement](https://www.minneapolisfed.org/community-development-and-engagement) team at the Federal Reserve Bank of Minneapolis. 
 
-This data product provides estimates of the *homeowners-to-population ratio* (HPOP), which is defined as the share of the adult population that owns their home. The HPOP is calculated using American Community Survey data from 2006 through 2024, and estimates of it are made available for various geographies (national, state, and core-based statistical area) and person-level characteristics (age group, race, and marital status). 
+This data product provides estimates of the *homeowners-to-population ratio* (HPOP), which is defined as the share of the adult population that owns their home. The HPOP is calculated using American Community Survey data from 2006 through 2024, and estimates of it are made available for various geographies (national and state) and person-level characteristics (age group, race, and marital status). 
 
 These homeownership estimates are meant to inform researchers, analysts, decision-makers, and others about current and historical homeownership conditions in the United States. 
 
-The current version of the HPOP datasets reflects information (see below) as of **April 2026**. 
+The current version of the HPOP datasets reflects information (see below) as of **July 2026**. 
 
 ---
 # 📰 Related publications
@@ -18,7 +18,7 @@ Read our article, “[New homeownership measure puts people first](https://www.m
 ---
 # 🌍 Scope 
 
-These datasets include estimated HPOPs and owner-occupancy rates for a variety of geographic areas and demographic characteristics. This includes estimates at the national, state, and metropolitan-statistical-area levels. It also includes estimates by age, marital status, and race/ethnicity.
+These datasets include estimated HPOPs and owner-occupancy rates for a variety of geographic areas and demographic characteristics. This includes estimates at the national and state levels. It also includes estimates by age, marital status, and race/ethnicity.
 
 ---
 # 🏗️ Structure 
@@ -42,13 +42,10 @@ When a dataset includes subgroups based on person-level characteristics, a numer
 
 ## Primary data
 
-The HPOP datasets are derived from American Community Survey (ACS) data. Additional data are used to translate ACS Public Use Microdata Area (PUMA) geographies into Core-Based Statistical Areas (CBSAs). 
+The HPOP datasets are derived from American Community Survey (ACS) data.
 
 Sources of this information are: 
-
-- [U.S. Census Bureau American Community Survey](https://www2.census.gov/programs-surveys/acs/data/pums/)
-
-- Geographic crosswalk files, from the [Missouri Census Data Center Geocorr Applications (2022)](https://mcdc.missouri.edu/applications/geocorr2022.html), using population weights and the U.S. Census Bureau [PUMA  relationship files](https://usa.ipums.org/usa/volii/pumas10.shtml)
+- U.S. Census Bureau [American Community Survey 1-year PUMS (Public Use Microdata Sample) files](https://www2.census.gov/programs-surveys/acs/data/pums/)
 
 ---
 # 📝 Technical notes 
@@ -81,17 +78,13 @@ Where the sample of housing units, denoted by $`H_{t}`$, includes all occupied n
 
 ## Subnational-level statistics
 
-We calculate the HPOP for a variety of subnational-level populations of interest. To calculate state-level estimates, we use values from the `state` variable. To calculate estimates at the CBSA (Core-Based Statistical Area) level, we translate PUMA (Public Use Microdata Area) geographies into CBSAs.<sup>2</sup> To do this, we crosswalk PUMAs to counties and then counties to CBSAs. Since PUMA geographies are modified with each decennial census, we base our PUMA-to-county crosswalk on 2020 PUMA geographies. We first translate all PUMAs into 2020 PUMAs.<sup>3</sup> After counties have been assigned to PUMAs, we then crosswalk counties to CBSAs.   
+We calculate the HPOP for a variety of subnational-level populations of interest. To calculate state-level estimates, we use values from the `state` variable.
 
 To calculate homeownership rates by age, we use the person-level `agep` variable and split it into seven categories: “18–24,” “25–34,” “35–44,” “45–54,” “55–64,” “65–74,” and “75 and older.” For our race/ethnicity estimates, we utilize the `rac1p` and the `hisp` variables. We create 10 mutually exclusive race/ethnicity categories by counting all Hispanic or Latino adults as a single category and then utilize the nine racial categories for all non-Hispanic or non-Latino adults. For our marital status estimates, we utilize the `mar` variable and its five categories: “Married,” “Widowed,” “Divorced,” “Separated,” and “Never married.” 
 
 ## Footnotes
 
 1. The 2005–2007 relationship variable only identifies “In-laws,” while the files from 2008 and beyond separate this classification into “Parent-in-law” or “Son-in-law or daughter-in-law.” For 2005–2007, we categorize people who are in-laws and under the age of 55 as “Son-in-law or daughter-in-law,” and those 55 and older as “Parent-in-law,” based on the observed distribution of this variable by age in 2008 data. 
-
-2. For definitions of CBSAs, see the U.S. Census Bureau’s [Delineation Files](https://www.census.gov/geographies/reference-files/time-series/demo/metro-micro/delineation-files.html) page. 
-
-3. For PUMA crosswalk files, see IPUMs’ [2010 PUMAs](https://usa.ipums.org/usa/volii/pumas10.shtml) and the U.S. Census Bureau's [Relationship Files](https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html#puma_comp) pages.
 
 ---
 # 📫 Contact 
